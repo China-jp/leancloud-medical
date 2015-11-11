@@ -1,0 +1,13 @@
+{% set page_title = "登录" %}
+
+{% extends "layout.html" %}
+
+{% block content %}
+<form class="" role="form" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.login }}
+    {{ form.password }}
+    {{ form.remember_me }}
+    {{ form.submit }}
+</form>
+{% endblock %}

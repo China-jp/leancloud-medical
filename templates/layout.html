@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+        {% block title %}
+            {%- if not page_title -%}
+                后台 - 医道互联
+            {%- else -%}
+                {{ page_title }} - 医道互联
+            {%- endif -%}
+        {% endblock %}
+        </title>
+
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        {% endblock %}
+
+        {# for extra stylesheets. e.q. a template has to add something #}
+        {% block css %}
+        {% endblock %}
+
+        {# for various extra things #}
+        {% block head_extra %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block navigation %}
+
+        {% endblock %}
+
+
+        <div class="container">
+            {% block messages %}
+
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
+        </div> <!-- /container -->
+
+
+        {% block footer %}
+        <div id="footer">
+            <div class="container">
+            </div>
+        </div>
+        {% endblock %}
+
+
+        {# standard javascript libs #}
+        {% block javascript %}
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        {% endblock %}
+
+
+        {# space for extra scripts - to use in other templates #}
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>
